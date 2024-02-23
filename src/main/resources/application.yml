@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: ${spring-azuresql-uri}
+#    url: jdbc:sqlserver://localhost;databaseName=prueba_angela;encrypt=true;trustServerCertificate=true
+#    url: jdbc:sqlserver://naylasql.database.windows.net:1433;database=prueba-edwin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: ${spring-azuresql-username}
+    password: ${spring-azuresql-password}
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: update
+      
+azure:
+  keyvault:
+    enabled: true
+    uri: https://nayla-keyvault.vault.azure.net/
+    client-id: f216a8fe-da2b-4397-b62e-3b76e168ba74
+    client-key: MKY8Q~0Tuue5wG4EWjpaAHbqE6KCB0tTHgrbzaFp
+    tenant-id: 02bc1ac4-e2fe-4f58-b83b-14a6bd4691eb
+    
